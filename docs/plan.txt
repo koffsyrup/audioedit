@@ -1,0 +1,4 @@
+Functionality:
+-receives files from html form posts (I think this uses multipart/mime)
+-account creation, login, maybe just "right-to-the-point"
+-receive file, generate wave form, stream/play-file back
