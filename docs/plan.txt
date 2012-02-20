@@ -2,3 +2,9 @@ Functionality:
 -receives files from html form posts (I think this uses multipart/mime)
 -account creation, login, maybe just "right-to-the-point"
 -receive file, generate wave form, stream/play-file back
+
+Things to do:
+-figure out how to generate a waveform
+-figure out how to clip audio
+-roll a media/visualizer player; widget that delegates to an audio object
+-add "download" to API so user can retrieve a file
