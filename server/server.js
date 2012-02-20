@@ -8,8 +8,6 @@ var app = express.createServer(
 );
 
 app.register(".html", require("ejs"));
-
-
 app.set("view engine", "ejs");
 
 app.configure(function(){
@@ -21,7 +19,6 @@ app.configure(function(){
 
 //Receive the file
 app.post("/upload", function(req, resp, next){
-  //TODO: check it's audio
 });
 
 //Receive the trimming data
@@ -52,12 +49,12 @@ app.get("/stream/:file", function(req, res, next){
       "Transfer-Encoding": "chunked"
    });
 
-  var readStream = fs.createReadStream(file);
+  var readStream = fs.createReadStream(file, {flags:"r"});
 
   //pipe this to the resource
   readStream.on("open", function(){
     readStream.pipe(res);
-  })
+  });
 });
 
 app.listen(8124);
